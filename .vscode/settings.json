@@ -1,0 +1,52 @@
+{
+    // Purpose: Enable format-on-save across the project.
+    "editor.formatOnSave": true,
+    // Purpose: Let VS Code activate the selected Python environment in terminals.
+    "python.terminal.activateEnvironment": true,
+    // Purpose: Point VS Code at the virtual-environment folder, not the Windows-specific
+    // python.exe path. This is the form the official Python settings docs recommend for
+    // shared workspaces because it is less platform-specific.
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+    // Purpose: Tell Pylance that backend/src is an import root.
+    // Reason: our package is not at repository root; it lives under src layout.
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/backend/src"
+    ], // Purpose: Use Black for Python files.
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    // Purpose: Use Prettier for TypeScript files.
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // Purpose: Use Prettier for TSX / React TypeScript files.
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // Purpose: Use Prettier for HTML files.
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // Purpose: Use Prettier for CSS files.
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // Purpose: Hide generated folders from the explorer.
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.mypy_cache": true,
+        "**/.ruff_cache": true,
+        "**/node_modules": true,
+        "**/dist": true
+    },
+    // Purpose: Hide generated folders from search too.
+    "search.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.mypy_cache": true,
+        "**/.ruff_cache": true,
+        "**/node_modules": true,
+        "**/dist": true
+    }
+}

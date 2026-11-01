@@ -1,0 +1,29 @@
+# Purpose: Ignore Python virtual environments and interpreter metadata.
+.venv/
+.python-version
+
+# Purpose: Ignore Python cache and test artifacts.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Purpose: Ignore Python build and packaging artifacts.
+*.egg-info/
+build/
+dist/
+
+# Purpose: Ignore frontend dependency and build artifacts.
+frontend/node_modules/
+frontend/dist/
+
+# Purpose: Ignore OS-specific junk files.
+.DS_Store
+Thumbs.db
+
+# Purpose: Ignore temporary runtime directories we will use later for uploads/outputs.
+tmp/
+outputs/

@@ -1,0 +1,35 @@
+# Purpose: Install the normal pre-commit hook type by default.
+default_install_hook_types: [pre-commit]
+
+repos:
+  # Purpose: Run general repository hygiene checks on text and config files.
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      # Purpose: Ensure TOML files such as pyproject.toml are valid.
+      - id: check-toml
+
+      # Purpose: Ensure YAML files such as this file are valid.
+      - id: check-yaml
+
+      # Purpose: Ensure files end with a newline to avoid noisy diffs.
+      - id: end-of-file-fixer
+
+      # Purpose: Remove accidental trailing whitespace.
+      - id: trailing-whitespace
+
+  # Purpose: Run Ruff as the fast Python linter.
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.11
+    hooks:
+      # Purpose: Lint Python files and auto-fix what Ruff can safely fix.
+      - id: ruff-check
+        args: [--fix]
+
+  # Purpose: Run Black as the single Python formatter.
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 26.3.1
+    hooks:
+      # Purpose: Format Python files consistently using Black.
+      - id: black
+        language_version: python3.12
