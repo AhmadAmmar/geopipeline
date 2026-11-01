@@ -2,6 +2,8 @@
 
 GeoPipeline is an open-source full-stack geospatial processing platform.
 
+**Status:** early development. The project structure is in place; the features below are planned and not yet built.
+
 Planned capabilities include:
 
 - vector upload and validation
